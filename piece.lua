@@ -3,6 +3,7 @@ local Piece = {}
 Piece.new = function( board, number, index  )
 	local x, y = board.get_coordinates( index )
 	local piece = display.newImage( board, 'img/'..number..'.png', x, y )
+	piece.number = number
 	piece.index = index
 	
 	function piece:tap( event )

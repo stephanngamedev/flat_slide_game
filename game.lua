@@ -12,7 +12,6 @@ local screenCenterY = display.contentCenterY
 
 local function init( group )
 	board = Board.new( screenCenterX, screenCenterY )
-
 	group:insert( board )
 end
 
