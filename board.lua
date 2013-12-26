@@ -1,3 +1,6 @@
+local screenCenterX = display.contentCenterX
+local screenCenterY = display.contentCenterY
+
 local GameUtil = require 'game_util'
 local Piece = require 'piece'
 
@@ -15,14 +18,16 @@ Board.coordinates = {
 	{ x = 200, y = 200 } -- 9
 }
 
-Board.new = function( x, y )
+Board.new = function( hud )
+	local hud = hud
+
 	local board = display.newGroup()
 	board.anchorChildren = true
 	board.pieces = {}
 
 	function board:_create_pieces()
 		self:_destroy_pieces()
-		local sequence = { 1,2,3,4,5,6,7,9,8 }--GameUtil.generate_sequence()	
+		local sequence = GameUtil.generate_sequence()	
 		for i = 1, 9 do
 			local piece_number = sequence[ i ]
 			if piece_number ~= 9 then
@@ -67,6 +72,7 @@ Board.new = function( x, y )
 				self.pieces[index].index = blank_index
 				GameUtil.change( board.pieces, index, blank_index )
 				self:_check_state()
+				hud:increment_moves()
 			end
 		})
 	end
@@ -85,7 +91,7 @@ Board.new = function( x, y )
 	end
 
 	board:_create_pieces()
-	board.x, board.y = x, y
+	board.x, board.y = screenCenterX, screenCenterY
 	board.state = 'waiting'
 	return board
 end
