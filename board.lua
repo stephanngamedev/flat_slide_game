@@ -25,7 +25,7 @@ Board.new = function( hud )
 	board.anchorChildren = true
 	board.pieces = {}
 
-	function board:_create_pieces()
+	function board:create_pieces()
 		self:_destroy_pieces()
 		local sequence = GameUtil.generate_sequence()	
 		for i = 1, 9 do
@@ -90,7 +90,6 @@ Board.new = function( hud )
 		self.state = 'finished'
 	end
 
-	board:_create_pieces()
 	board.x, board.y = screenCenterX, screenCenterY
 	board.state = 'waiting'
 	return board

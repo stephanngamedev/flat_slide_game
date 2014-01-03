@@ -18,15 +18,17 @@ function scene:init( group )
 end
 
 function scene:createScene( event )
-	local group = self.view
+	local group = self.view	
 	self:init( group )
 end
 
-function scene:enterScene( event )
-	local group = self.view
+function scene:willEnterScene( event )
+	local group = self.view	
+	board:create_pieces()
+	hud:reset()
 end
 
 scene:addEventListener( "createScene", scene )
-scene:addEventListener( "enterScene", scene )
+scene:addEventListener( "willEnterScene", scene )
 
 return scene
