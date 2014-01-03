@@ -31,7 +31,9 @@ Board.new = function( hud )
 		for i = 1, 9 do
 			local piece_number = sequence[ i ]
 			if piece_number ~= 9 then
-				self.pieces[ i ] = Piece.new( self, piece_number, i )
+				local piece = Piece.new( self, piece_number, i )
+				self.pieces[ i ] = piece
+				self:insert( piece )
 			end
 		end
 	end

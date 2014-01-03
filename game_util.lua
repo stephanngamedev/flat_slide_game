@@ -26,11 +26,19 @@ GameUtil._has_value = function( table, value )
 	return false
 end
 
-GameUtil.get_font_name = function()
+GameUtil.get_roboto_font_name = function()
 	if "Android" == system.getInfo( "platformName" ) then
-		return 'Roboto-Light'
+		return 'Roboto-Thin'
 	else
 		return 'roboto'
+	end
+end
+
+GameUtil.get_aller_font_name = function()
+	if "Android" == system.getInfo( "platformName" ) then
+		return 'Aller_Bd'
+	else
+		return 'Aller-Bold'
 	end
 end
 

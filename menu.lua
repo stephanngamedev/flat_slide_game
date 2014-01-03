@@ -4,7 +4,7 @@ local screenCenterX = display.contentCenterX
 local screenCenterY = display.contentCenterY
 
 local scene = storyboard.newScene()
-local font_name = GameUtil.get_font_name()
+local font_name
 local logo_image
 local logo_text
 local start_button
@@ -117,6 +117,7 @@ local create_about_button = function( group )
 end
 
 function scene:init( group )
+	font_name = GameUtil.get_roboto_font_name()
 	create_logo_image( group )
 	create_logo_text( group )
 	create_start_button( group )

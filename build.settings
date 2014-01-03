@@ -6,7 +6,8 @@ settings = {
 	iphone = {
         plist = {
             UIAppFonts = {
-                'Roboto-Thin.ttf'
+                'Roboto-Thin.ttf',
+                'Aller_Bd.ttf'
             },
             UIApplicationExitsOnSuspend = true
         },

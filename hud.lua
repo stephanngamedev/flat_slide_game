@@ -7,7 +7,7 @@ local screenHeight = display.contentHeight
 local screenCenterX = display.contentCenterX
 local screenCenterY = display.contentCenterY
 
-local font_name = GameUtil.get_font_name()
+local font_name = GameUtil.get_roboto_font_name()
 local font_size = 20
 
 HUD.new = function()
