@@ -15,8 +15,8 @@ Piece.new = function( board, number, index  )
 
 	function piece:_can_move()
 		local blank_index = self.parent:get_blank_index()
-		if self.index - 1 == blank_index 
-			or self.index + 1 == blank_index 
+		if ( self.index - 1 == blank_index and self.index ~= 4 and self.index ~= 7)
+			or ( self.index + 1 == blank_index and self.index ~= 3 and self.index ~= 6 )
 			or self.index - 3 == blank_index 
 			or self.index + 3 == blank_index then
 			return true
